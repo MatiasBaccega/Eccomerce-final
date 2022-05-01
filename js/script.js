@@ -58,7 +58,7 @@ mostrarProductos ();
 const agregarProductos = () => {
     let productoElegido;
     do {
-    productoElegido = parseInt(prompt(`Que producto vas a llevar? \n 1) Lapiz \n 2) Lapiz \n 3) Lapiz \n 4) Lapiz \n 5) Lapiz \n 6) Lapiz \n 7) Lapiz \n 8) Lapiz \n 9) Lapiz \n 10) Lapiz \n 11) Lapiz \n 12) Lapiz \n 13) Lapiz \n 14) Lapiz \n 15) Lapiz`))
+    productoElegido = parseInt(prompt(`Que producto vas a llevar? \n 1) Lapiz Casttle \n 2) Lapiz Coder \n 3) Lapiz Faber \n 4) Lapiz Pencil \n 5) Lapiz House \n 6) Boligrafo Casttle  \n 7) Boligrafo Coder \n 8) Boligrafo Faber \n 9) Boligrafo Pencil \n 10) Boligrafo House \n 11) Plastilina Casttle \n 12) Plastilina Codes \n 13) Plastilina Faber \n 14) Plastilina Pencil \n 15) Plastilina House`))
 
     switch (productoElegido) {
         case 1:
