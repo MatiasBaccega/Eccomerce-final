@@ -44,47 +44,75 @@ let carro = [];
 
 
 const container = document.querySelector(".container")
-const container2 = document.querySelector(".container2")
+const tituloContainer = document.querySelector("#tituloContainer")
 const container3 = document.querySelector(".container3")
 const pagM = document.querySelector("#pagM")
 const pagB = document.querySelector("#pagB")
 const pagT = document.querySelector("#pagT")
 
-// -----------------
-
-/* container.addEventListener('click', e => {
-    agregarCarro (e)
-}) */
+// CREO LOS ELEMENTOS DINAMICOS DEL HTML 
 
 
-    
+const productosDestacados = document.createElement("div")
+productosDestacados.className = 'pDestacados row'
+container.appendChild(productosDestacados)
 
 
 // FILTROS POR RUBRO
 
 const filtrarMate = () => {
     pagM.addEventListener('click',  () => {
+    productosDestacados.innerHTML = ""
+    tituloContainer.innerHTML = "<h3>Mates</h3>"
     let filMate = productos.filter(mates => mates.id > 0 && mates.id <= 6)
     filMate.forEach(pMates => {
-        console.log(pMates)
+        productosDestacados.innerHTML +=
+        `<div id="${pMates.id}" class="card" style="width: 18rem;">
+            <div  class="card-body">
+                <h5 class="card-title">${pMates.marca}</h5>
+                <p class="card-text">Marca: ${pMates.articulo}</p>
+                <p class="card-text">Precio: $${pMates.precio}</p>
+                <button id="boton${pMates.id}" class="btn btn-dark">Agregar al carrito</button>
+            </div>
+        </div>`
     })})
     
 }
 
 const filtrarBombilla = () => { 
     pagB.addEventListener('click',  () => {
+        productosDestacados.innerHTML = ""
+        tituloContainer.innerHTML = "<h3>Bombillas</h3>"
         let filBombilla = productos.filter(bombillas => bombillas.id <= 13 && bombillas.id > 6)
         filBombilla.forEach(pBombillas => {
-            console.log(pBombillas)
+            productosDestacados.innerHTML +=
+            `<div id="${pBombillas.id}" class="card" style="width: 18rem;">
+                <div  class="card-body">
+                    <h5 class="card-title">${pBombillas.marca}</h5>
+                    <p class="card-text">Marca: ${pBombillas.articulo}</p>
+                    <p class="card-text">Precio: $${pBombillas.precio}</p>
+                    <button id="boton${pBombillas.id}" class="btn btn-dark">Agregar al carrito</button>
+                </div>
+            </div>`
         })})
 
 }
 
 const filtrarTermo = () => { 
     pagT.addEventListener('click',  () => {
+        productosDestacados.innerHTML = ""
+        tituloContainer.innerHTML = "<h3>Termos</h3>"
         let filTermo = productos.filter(termos => termos.id > 13 && termos.id <= 27)
         filTermo.forEach(pTermos => {
-            console.log(pTermos)
+            productosDestacados.innerHTML +=
+            `<div id="${pTermos.id}" class="card" style="width: 18rem;">
+                <div  class="card-body">
+                    <h5 class="card-title">${pTermos.marca}</h5>
+                    <p class="card-text">Marca: ${pTermos.articulo}</p>
+                    <p class="card-text">Precio: $${pTermos.precio}</p>
+                    <button id="boton${pTermos.id}" class="btn btn-dark">Agregar al carrito</button>
+                </div>
+            </div>`
         })})
 }
 
@@ -94,24 +122,23 @@ const filtrarTermo = () => {
 // MOSTRAR EN PAGINA PRINCIPAL SOLO PRODUCTOS DESTACADOS.
 
 const mostrarDestacados = () => {
-    const productosDestacados = document.createElement("div")
-    productosDestacados.className = 'pDestacados row'
-    container.appendChild(productosDestacados)
     
-    let destacados = productos.forEach((pDest)=>{
-        if (pDest.destacado) {
-    
-            productosDestacados.innerHTML +=
-    `<div id="${pDest.id}" class="card" style="width: 18rem;">
-        <div  class="card-body">
-            <h5 class="card-title">${pDest.marca}</h5>
-            <p class="card-text">Marca: ${pDest.articulo}</p>
-            <p class="card-text">Precio: $${pDest.precio}</p>
-            <button id="boton${pDest.id}" class="btn btn-dark">Agregar al carrito</button>
-        </div>
-    </div>`
-        }
-})}
+        let destacados = productos.forEach((pDest)=>{
+                
+            if(pDest.destacado) {
+                productosDestacados.innerHTML +=
+            `   <div id="${pDest.id}" class="card" style="width: 18rem;">
+                    <div  class="card-body">
+                        <h5 class="card-title">${pDest.marca}</h5>
+                        <p class="card-text">Marca: ${pDest.articulo}</p>
+                        <p class="card-text">Precio: $${pDest.precio}</p>
+                        <button id="boton${pDest.id}" class="btn btn-dark">Agregar al carrito</button>
+                    </div>
+                </div>`
+            }
+
+    })
+    }
 
 
 
