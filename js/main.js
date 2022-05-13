@@ -97,18 +97,20 @@ const mostrarDestacados = () => {
     const productosDestacados = document.createElement("div")
     productosDestacados.className = 'pDestacados row'
     container.appendChild(productosDestacados)
-
+    
     let destacados = productos.forEach((pDest)=>{
-
-    productosDestacados.innerHTML +=
-        `<div id="${pDest.id}" class="card" style="width: 18rem;">
-            <div  class="card-body">
-                <h5 class="card-title">${pDest.marca}</h5>
-                <p class="card-text">Marca: ${pDest.articulo}</p>
-                <p class="card-text">Precio: $${pDest.precio}</p>
-                <button id="boton${pDest.id}" class="btn btn-dark">Agregar al carrito</button>
-            </div>
-        </div>`    
+        if (pDest.destacado) {
+    
+            productosDestacados.innerHTML +=
+    `<div id="${pDest.id}" class="card" style="width: 18rem;">
+        <div  class="card-body">
+            <h5 class="card-title">${pDest.marca}</h5>
+            <p class="card-text">Marca: ${pDest.articulo}</p>
+            <p class="card-text">Precio: $${pDest.precio}</p>
+            <button id="boton${pDest.id}" class="btn btn-dark">Agregar al carrito</button>
+        </div>
+    </div>`
+        }
 })}
 
 
