@@ -1,0 +1,69 @@
+.pDestacados {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10em;
+    padding-top: 10em;
+    padding-bottom: 10em;
+}
+
+.container {
+    background-color: white;
+    box-shadow: 1px 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 10em;
+    margin-top: 10em;
+}
+
+body {
+background-image: url(watercolor-g4498a6121_1280.png);}
+
+header {
+    height: 200px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10em;
+}
+
+.carrito {
+    cursor: pointer;
+    position: fixed;
+    margin-top: 51em;
+    padding: 10px;
+}
+
+.logo {
+text-align: center;
+gap: 10em;
+
+}
+
+
+nav{
+    width: 100%;
+    height: 5em;
+    background-color: white;
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+}
+    
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 20em;
+    list-style: none;
+    padding-top: 20px;
+    
+}
+
+li a{
+    text-decoration: none;
+    font-size: 25px;
+    text-transform: uppercase;   
+    color: black;
+}
