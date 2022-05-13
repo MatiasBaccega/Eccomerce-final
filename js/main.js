@@ -46,9 +46,9 @@ let carro = [];
 const container = document.querySelector(".container")
 const container2 = document.querySelector(".container2")
 const container3 = document.querySelector(".container3")
-/* const pagM = document.querySelector("#pagM")
+const pagM = document.querySelector("#pagM")
 const pagB = document.querySelector("#pagB")
-const pagT = document.querySelector("#pagT") */
+const pagT = document.querySelector("#pagT")
 
 // -----------------
 
@@ -68,16 +68,24 @@ const filtrarMate = () => {
     filMate.forEach(pMates => {
         console.log(pMates)
     })})
+    
 }
 
 const filtrarBombilla = () => { 
-    let filBombilla = productos.filter(bombilla => bombilla.id > 6 && bombilla.id <= 13)
-    console.log(filBombilla)
+    pagB.addEventListener('click',  () => {
+        let filBombilla = productos.filter(bombillas => bombillas.id <= 13 && bombillas.id > 6)
+        filBombilla.forEach(pBombillas => {
+            console.log(pBombillas)
+        })})
+
 }
 
 const filtrarTermo = () => { 
-    let filTermo = productos.filter(termo => termo.id > 13 && termo.id <= 27)
-    console.log(filTermo)
+    pagT.addEventListener('click',  () => {
+        let filTermo = productos.filter(termos => termos.id > 13 && termos.id <= 27)
+        filTermo.forEach(pTermos => {
+            console.log(pTermos)
+        })})
 }
 
 
@@ -86,12 +94,12 @@ const filtrarTermo = () => {
 // MOSTRAR EN PAGINA PRINCIPAL SOLO PRODUCTOS DESTACADOS.
 
 const mostrarDestacados = () => {
-
-    let destacados = productos.forEach((pDest)=>{
     const productosDestacados = document.createElement("div")
     productosDestacados.className = 'pDestacados row'
     container.appendChild(productosDestacados)
-        
+
+    let destacados = productos.forEach((pDest)=>{
+
     productosDestacados.innerHTML +=
         `<div id="${pDest.id}" class="card" style="width: 18rem;">
             <div  class="card-body">
