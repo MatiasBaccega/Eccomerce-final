@@ -50,20 +50,22 @@ const pagM = document.querySelector("#pagM")
 const pagB = document.querySelector("#pagB")
 const pagT = document.querySelector("#pagT")
 
-// CREO LOS ELEMENTOS DINAMICOS DEL HTML 
+// CREO LOS ELEMENTOS 
 
 
 const productosDestacados = document.createElement("div")
 productosDestacados.className = 'pDestacados row'
 container.appendChild(productosDestacados)
 
+// -------------------------------------------------- //
 
-// FILTROS POR RUBRO
+// MOSTRAR FILTROS POR RUBRO
 
 const filtrarMate = () => {
-    pagM.addEventListener('click',  () => {
     productosDestacados.innerHTML = ""
+
     tituloContainer.innerHTML = "<h3>Mates</h3>"
+
     let filMate = productos.filter(mates => mates.id > 0 && mates.id <= 6)
     filMate.forEach(pMates => {
         productosDestacados.innerHTML +=
@@ -75,14 +77,15 @@ const filtrarMate = () => {
                 <button id="boton${pMates.id}" class="btn btn-dark">Agregar al carrito</button>
             </div>
         </div>`
-    })})
+    })
     
 }
 
 const filtrarBombilla = () => { 
-    pagB.addEventListener('click',  () => {
         productosDestacados.innerHTML = ""
+
         tituloContainer.innerHTML = "<h3>Bombillas</h3>"
+
         let filBombilla = productos.filter(bombillas => bombillas.id <= 13 && bombillas.id > 6)
         filBombilla.forEach(pBombillas => {
             productosDestacados.innerHTML +=
@@ -94,14 +97,15 @@ const filtrarBombilla = () => {
                     <button id="boton${pBombillas.id}" class="btn btn-dark">Agregar al carrito</button>
                 </div>
             </div>`
-        })})
+        })
 
 }
 
 const filtrarTermo = () => { 
-    pagT.addEventListener('click',  () => {
         productosDestacados.innerHTML = ""
+
         tituloContainer.innerHTML = "<h3>Termos</h3>"
+
         let filTermo = productos.filter(termos => termos.id > 13 && termos.id <= 27)
         filTermo.forEach(pTermos => {
             productosDestacados.innerHTML +=
@@ -113,18 +117,18 @@ const filtrarTermo = () => {
                     <button id="boton${pTermos.id}" class="btn btn-dark">Agregar al carrito</button>
                 </div>
             </div>`
-        })})
+        })
+
 }
 
 
-
+//---------------------------------------------------------------------------------------------//
 
 // MOSTRAR EN PAGINA PRINCIPAL SOLO PRODUCTOS DESTACADOS.
 
 const mostrarDestacados = () => {
-    
+    tituloContainer.innerHTML = `<h3>Productos destacados</h3>`
         let destacados = productos.forEach((pDest)=>{
-                
             if(pDest.destacado) {
                 productosDestacados.innerHTML +=
             `   <div id="${pDest.id}" class="card" style="width: 18rem;">
@@ -140,13 +144,27 @@ const mostrarDestacados = () => {
     })
     }
 
+// ------------------------------------------------------------------------------------------------//
 
 
+// EVENTOS
 
+pagT.addEventListener('click',  () => {
+    filtrarTermo();
+})
 
+pagB.addEventListener('click',  () => {
+    filtrarBombilla();
+})
 
+pagM.addEventListener('click',  () => {
+    filtrarMate();
+})
+
+// -----------------------------------------------------------------------------
+
+// EJECUTAR FUNCIONES
 
 mostrarDestacados();
-filtrarMate();
-filtrarBombilla();
-filtrarTermo();
+
+

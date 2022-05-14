@@ -6,7 +6,7 @@
     justify-content: center;
     text-align: center;
     gap: 10em;
-    padding-top: 10em;
+    padding-top: 1em;
     padding-bottom: 10em;
 }
 
@@ -72,4 +72,24 @@ li button{
 
 li button:hover{
     color: aquamarine;
+}
+
+#tituloContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1em;
+    font-size: 3.5em;
+    text-transform: uppercase;
+    color: black;
+}
+
+
+.tituloC {
+    width: 100%;
+    height: 10em;
+    background-image: url(watercolor-g4498a6121_1280.png);
+    background-position: center;
+    background-size: cover;
+    margin-top: 1em;
 }
