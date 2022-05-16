@@ -35,6 +35,7 @@ header {
     position: fixed;
     margin-top: 51em;
     padding: 10px;
+    border: none;
 }
 
 .logo {
@@ -82,6 +83,7 @@ li button:hover{
     font-size: 3.5em;
     text-transform: uppercase;
     color: black;
+    gap: 15em;
 }
 
 
@@ -92,4 +94,29 @@ li button:hover{
     background-position: center;
     background-size: cover;
     margin-top: 1em;
+}
+
+.container3 {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 1px 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 10em;
+    
+    margin-left: 20%;
+}
+
+.vCarro {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    
 }

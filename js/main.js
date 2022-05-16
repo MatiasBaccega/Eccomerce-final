@@ -49,6 +49,7 @@ const container3 = document.querySelector(".container3")
 const pagM = document.querySelector("#pagM")
 const pagB = document.querySelector("#pagB")
 const pagT = document.querySelector("#pagT")
+const pagD = document.querySelector("#pagD")
 
 // CREO LOS ELEMENTOS 
 
@@ -57,6 +58,11 @@ const productosDestacados = document.createElement("div")
 productosDestacados.className = 'pDestacados row'
 container.appendChild(productosDestacados)
 
+
+const verCarro = document.createElement("div")
+verCarro.className = 'vCarro row'
+container3.appendChild(verCarro)
+
 // -------------------------------------------------- //
 
 // MOSTRAR FILTROS POR RUBRO
@@ -64,7 +70,8 @@ container.appendChild(productosDestacados)
 const filtrarMate = () => {
     productosDestacados.innerHTML = ""
 
-    tituloContainer.innerHTML = "<h3>Mates</h3>"
+    tituloContainer.innerHTML = `<h3>Mates</h3>
+    `
 
     let filMate = productos.filter(mates => mates.id > 0 && mates.id <= 6)
     filMate.forEach(pMates => {
@@ -73,8 +80,8 @@ const filtrarMate = () => {
             <div  class="card-body">
                 <h5 class="card-title">${pMates.marca}</h5>
                 <p class="card-text">Marca: ${pMates.articulo}</p>
-                <p class="card-text">Precio: $${pMates.precio}</p>
-                <button id="boton${pMates.id}" class="btn btn-dark">Agregar al carrito</button>
+                <p class="card-text price">Precio: $${pMates.precio}</p>
+                <button id="boton${pMates.id}" class="btn btn-outline-primary">Agregar al carrito</button>
             </div>
         </div>`
     })
@@ -84,7 +91,9 @@ const filtrarMate = () => {
 const filtrarBombilla = () => { 
         productosDestacados.innerHTML = ""
 
-        tituloContainer.innerHTML = "<h3>Bombillas</h3>"
+        tituloContainer.innerHTML = `
+        <h3>Bombillas</h3>
+        `
 
         let filBombilla = productos.filter(bombillas => bombillas.id <= 13 && bombillas.id > 6)
         filBombilla.forEach(pBombillas => {
@@ -93,8 +102,8 @@ const filtrarBombilla = () => {
                 <div  class="card-body">
                     <h5 class="card-title">${pBombillas.marca}</h5>
                     <p class="card-text">Marca: ${pBombillas.articulo}</p>
-                    <p class="card-text">Precio: $${pBombillas.precio}</p>
-                    <button id="boton${pBombillas.id}" class="btn btn-dark">Agregar al carrito</button>
+                    <p class="card-text price">Precio: $${pBombillas.precio}</p>
+                    <button id="boton${pBombillas.id}" class="btn btn-outline-primary">Agregar al carrito</button>
                 </div>
             </div>`
         })
@@ -104,7 +113,10 @@ const filtrarBombilla = () => {
 const filtrarTermo = () => { 
         productosDestacados.innerHTML = ""
 
-        tituloContainer.innerHTML = "<h3>Termos</h3>"
+        tituloContainer.innerHTML = `
+        <h3>Termos</h3>
+
+        `
 
         let filTermo = productos.filter(termos => termos.id > 13 && termos.id <= 27)
         filTermo.forEach(pTermos => {
@@ -113,12 +125,11 @@ const filtrarTermo = () => {
                 <div  class="card-body">
                     <h5 class="card-title">${pTermos.marca}</h5>
                     <p class="card-text">Marca: ${pTermos.articulo}</p>
-                    <p class="card-text">Precio: $${pTermos.precio}</p>
-                    <button id="boton${pTermos.id}" class="btn btn-dark">Agregar al carrito</button>
+                    <p class="card-text price">Precio: $${pTermos.precio}</p>
+                    <button id="boton${pTermos.id}" class="btn btn-outline-primary">Agregar al carrito</button>
                 </div>
             </div>`
         })
-
 }
 
 
@@ -127,6 +138,7 @@ const filtrarTermo = () => {
 // MOSTRAR EN PAGINA PRINCIPAL SOLO PRODUCTOS DESTACADOS.
 
 const mostrarDestacados = () => {
+    productosDestacados.innerHTML = ""
     tituloContainer.innerHTML = `<h3>Productos destacados</h3>`
         let destacados = productos.forEach((pDest)=>{
             if(pDest.destacado) {
@@ -135,19 +147,62 @@ const mostrarDestacados = () => {
                     <div  class="card-body">
                         <h5 class="card-title">${pDest.marca}</h5>
                         <p class="card-text">Marca: ${pDest.articulo}</p>
-                        <p class="card-text">Precio: $${pDest.precio}</p>
-                        <button id="boton${pDest.id}" class="btn btn-dark">Agregar al carrito</button>
+                        <p class="card-text price">Precio: $${pDest.precio}</p>
+                        <button id="boton${pDest.id}" class="btn btn-outline-primary">Agregar al carrito</button>
                     </div>
                 </div>`
-            }
-
+            }      
     })
-    }
+}
 
-// ------------------------------------------------------------------------------------------------//
+
+// AGREGAR PRODUCTOS  AL CARRO Y GENERAR LOCALSTORAGE.
+
+const agregarCarrito = e => {
+    if (e.target.classList.contains('btn-outline-primary')) {
+        setearCarrito(e.target.parentElement)
+    } }
+const setearCarrito = articulo => {
+    const producto = {
+        articulo: articulo.querySelector('h5').textContent,
+        precio: articulo.querySelector('.price').textContent,
+        /* id: item.querySelector('.btn-outline-primary').id,
+        cantidad: 1 */
+    }
+    carro.push(producto)
+    /* console.log(carro) */
+    localStorage.setItem("productosCarrito", JSON.stringify(carro))
+}
+    
+// ------------------------------------------------------------------------------- //
+
+// EVENTO MOSTRAR CARRO
+
+document.getElementById("mostrarCarro").addEventListener('click', () => {
+    verCarro.innerHTML = ""
+
+    let obtenerCarro = JSON.parse(localStorage.getItem('productosCarrito'))
+    /* console.log(obtenerCarro) */
+
+    obtenerCarro.forEach((carrito) => {
+        verCarro.innerHTML +=
+            `  
+                <p>Marca: ${carrito.articulo}</p>
+                <p>${carrito.precio}</p>
+                
+            `
+    })
+})
+
+
+// -------------------------------------------------------------------------------------------------//
 
 
 // EVENTOS
+
+container.addEventListener('click', e => {
+    agregarCarrito(e)
+})
 
 pagT.addEventListener('click',  () => {
     filtrarTermo();
@@ -160,6 +215,12 @@ pagB.addEventListener('click',  () => {
 pagM.addEventListener('click',  () => {
     filtrarMate();
 })
+
+pagD.addEventListener('click',  () => {
+    mostrarDestacados();
+})
+
+
 
 // -----------------------------------------------------------------------------
 
