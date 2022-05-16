@@ -30,13 +30,7 @@ header {
     gap: 10em;
 }
 
-.carrito {
-    cursor: pointer;
-    position: fixed;
-    margin-top: 51em;
-    padding: 10px;
-    border: none;
-}
+
 
 .logo {
 text-align: center;
