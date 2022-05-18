@@ -1,3 +1,13 @@
+///////////////////////////////////////////////////////////////
+//                APLICO SPREAD EN LA LINEA                 //
+//                        N° 192                           //
+//  ES EN EL UNICO LUGAR DONDE ENCONTRE OPTIMO REALIZARLO //
+//                                                       //
+//////////////////////////////////////////////////////////
+
+
+
+
 class Productos {
     constructor(id, marca, articulo, precio, stock, destacado){
         this.id = id
@@ -40,7 +50,8 @@ const producto27 = new Productos (27, "Termo Coleman 1,1 L Green", "Coleman", 11
 const producto29 = new Productos (29, "Termo Coleman 1,1 L Black Sand", "Coleman", 115, 50, true)  */
 
 let productos = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11, producto12, producto13, producto14, producto15, producto16, producto17, producto18, producto19, producto20, producto21, producto22, producto23, producto24, producto25, producto26, producto27/* , producto28, producto29 */]
-let carro = [];
+let carro = {};
+let carrito = [];
 
 
 const container = document.querySelector(".container")
@@ -161,38 +172,57 @@ const mostrarDestacados = () => {
 const agregarCarrito = e => {
     if (e.target.classList.contains('btn-outline-primary')) {
         setearCarrito(e.target.parentElement)
-    } }
+        
+    } 
+}
+    
+
+
+
 const setearCarrito = articulo => {
     const producto = {
         articulo: articulo.querySelector('h5').textContent,
         precio: articulo.querySelector('.price').textContent,
-        /* id: item.querySelector('.btn-outline-primary').id,
-        cantidad: 1 */
+        id: articulo.querySelector('.btn-outline-primary').id,
+        cantidad: 1 
     }
-    carro.push(producto)
-    /* console.log(carro) */
-    localStorage.setItem("productosCarrito", JSON.stringify(carro))
-}
+
+if (carro.hasOwnProperty(producto.id)) {
+        producto.cantidad = carro[producto.id].cantidad + 1
+    }
+
+    carro[producto.id] = { ...producto }
+
+    localStorage.setItem("ProductosCarrito" , JSON.stringify(carro))
     
+}
 // ------------------------------------------------------------------------------- //
 
 // EVENTO MOSTRAR CARRO
 
 document.getElementById("mostrarCarro").addEventListener('click', () => {
+
+    let obtenerCarro = JSON.parse(localStorage.getItem('ProductosCarrito'))
+    
     verCarro.innerHTML = ""
 
-    let obtenerCarro = JSON.parse(localStorage.getItem('productosCarrito'))
-    /* console.log(obtenerCarro) */
 
-    obtenerCarro.forEach((carrito) => {
+    Object.values(obtenerCarro).forEach((carrito) => {
+        
         verCarro.innerHTML +=
             `  
                 <p>Marca: ${carrito.articulo}</p>
                 <p>${carrito.precio}</p>
+                <p>cantidad:${carrito.cantidad}</p>
                 
             `
     })
+
+    
+    
 })
+
+
 
 
 // -------------------------------------------------------------------------------------------------//
