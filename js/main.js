@@ -206,13 +206,14 @@ document.getElementById("mostrarCarro").addEventListener('click', () => {
     
     verCarro.innerHTML = ""
 
-
     Object.values(obtenerCarro).forEach((carrito) => {
-        
+
+
+
         verCarro.innerHTML +=
             `  
                 <p>Marca: ${carrito.articulo}</p>
-                <p>${carrito.precio}</p>
+                <p>${carrito.precio }</p>
                 <p>cantidad:${carrito.cantidad}</p>
                 
             `
@@ -222,7 +223,15 @@ document.getElementById("mostrarCarro").addEventListener('click', () => {
     
 })
 
+const toasT = () => {
+    Toastify({
 
+        text: "Producto agregado",
+        
+        duration: 3000
+        
+        }).showToast();
+}
 
 
 // -------------------------------------------------------------------------------------------------//
@@ -232,6 +241,7 @@ document.getElementById("mostrarCarro").addEventListener('click', () => {
 
 container.addEventListener('click', e => {
     agregarCarrito(e)
+    toasT()
 })
 
 pagT.addEventListener('click',  () => {
