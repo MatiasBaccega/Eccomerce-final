@@ -1,0 +1,194 @@
+[
+    {
+    "id": 1,
+    "nombre": "BOTINES X SPEEDFLOW.3 TERRENO FIRME",
+    "precio": 18999,
+    "destacado": false,
+    "imagen": "./img/1.webp",
+    "marca": "adidas"
+    },
+    {
+    "id": 2,
+    "nombre": "BOTINES X SPEEDFLOW.4 MULTITERRENO",
+    "precio": 13999,
+    "destacado": true,
+    "imagen": "./img/2.webp",
+    "marca": "adidas"
+    },
+    {
+    "id": 3,
+    "nombre": "BOTINES COPA SENSE.3 TERRENO FIRME",
+    "precio": 18999,
+    "destacado": false,
+    "imagen": "./img/3.webp",
+    "marca": "adidas"
+    },
+    {
+    "id": 4,
+    "nombre": "BOTINES GOLETTO VIII TERRENO FIRME",
+    "precio": 11999,
+    "destacado": true,
+    "imagen": "./img/4.webp",
+    "marca": "adidas"
+    },
+    {
+    "id": 5,
+    "nombre": "NEMEZIZ 19+ SG",
+    "precio": 64999,
+    "destacado": false,
+    "imagen": "./img/5.webp",
+    "marca": "adidas"
+    },
+    {
+    "id": 6,
+    "nombre": "BOTINES DE RUGBY KAKARI TERRENO SUAVE",
+    "precio": 18999,
+    "destacado": true,
+    "imagen": "./img/6.webp",
+    "marca": "adidas"
+    },
+    {
+    "id": 7,
+    "nombre": "BOTINES PREDATOR MUTATOR 20.1 TERRENO FIRME",
+    "precio": 44999,
+    "destacado": true,
+    "imagen": "./img/7.webp",
+    "marca": "adidas"
+    },
+    {
+    "id": 8,
+    "nombre": "BOTINES X SPEEDFLOW.3 SIN CORDONES TERRENO FIRME",
+    "precio": 19999,
+    "destacado": true,
+    "imagen": "./img/8.webp",
+    "marca": "adidas"
+    },
+    {
+    "id": 9,
+    "nombre": "BOTINES PREDATOR FREAK.1 TERRENO FIRME",
+    "precio": 44999,
+    "destacado": false,
+    "imagen": "./img/9.webp",
+    "marca": "adidas"
+    },
+    {
+    "id": 10,
+    "nombre": "BOTINES DE FÚTBOL COPA SENSE.1 TERRENO SUAVE",
+    "precio": 49999,
+    "destacado": true,
+    "imagen": "./img/10.webp",
+    "marca": "adidas"
+    },
+    {
+    "id": 11,
+    "nombre": "Botines FUTURE Z 3.3 FG/AG",
+    "precio": 16499,
+    "destacado": true,
+    "imagen": "./img/11.jpg",
+    "marca": "puma"
+    },
+    {
+    "id": 12,
+    "nombre": "Botines Ultra 2.3 FG/AG",
+    "precio": 900,
+    "destacado": true,
+    "imagen": "./img/12.jpg",
+    "marca": "puma"
+    },
+    {
+    "id": 13,
+    "nombre": "Botín de Fútbol Borussia FG",
+    "precio": 15499,
+    "destacado": true,
+    "imagen": "./img/13.webp",
+    "marca": "puma"
+    },
+    {
+    "id": 14,
+    "nombre": "Botines juveniles ULTRA 3.4 FG/AG",
+    "precio": 13499,
+    "destacado": true,
+    "imagen": "./img/14.jpg",
+    "marca": "puma"
+    },
+    {
+    "id": 15,
+    "nombre": "Botines FUTURE Z 1.3 FG/AG",
+    "precio": 36999,
+    "destacado": true,
+    "imagen": "./img/15.jpg",
+    "marca": "puma"
+    },
+    {
+    "id": 16,
+    "nombre": "Botines Nike Legend 8 Academy FG/MG Jr",
+    "precio": 9299,
+    "destacado": true,
+    "imagen": "./img/16.jfif",
+    "marca": "nike"
+    },
+    {
+    "id": 17,
+    "nombre": "Botines Nike Jr Legend 8 Club Fg/Mg",
+    "precio": 6499,
+    "destacado": true,
+    "imagen": "./img/17.jfif",
+    "marca": "nike"
+    },
+    {
+    "id": 18,
+    "nombre": "Botines Nike Jr Superfly 7 Academy Mds Fg/Mg",
+    "precio": 13199,
+    "destacado": false,
+    "imagen": "./img/18.jfif",
+    "marca": "nike"
+    },
+    {
+    "id": 19,
+    "nombre": "Botines Nike Phanton Venon Academy Fg",
+    "precio": 10399,
+    "destacado": true,
+    "imagen": "./img/19.jfif",
+    "marca": "nike"
+    },
+    {
+    "id": 20,
+    "nombre": "Botines Nike Vapor 14 Academy Fg/mg",
+    "precio": 14499,
+    "destacado": true,
+    "imagen": "./img/20.webp",
+    "marca": "nike"
+    },
+    {
+    "id": 21,
+    "nombre": "Botines Nike Futbol Phantom Gt Elite Fg",
+    "precio": 54999,
+    "destacado": true,
+    "imagen": "./img/21.webp",
+    "marca": "nike"
+    },
+    {
+    "id": 22,
+    "nombre": "Botines Nike Futbol Legend 8 Elite Sg-pro Ac",
+    "precio": 49999,
+    "destacado": true,
+    "imagen": "./img/22.webp",
+    "marca": "nike"
+    },
+    {
+    "id": 23,
+    "nombre": "Botines Nike Mercurial Vapor 13 Academy Fg",
+    "precio": 11200,
+    "destacado": true,
+    "imagen": "./img/23.webp",
+    "marca": "nike"
+    },
+    {
+    "id": 24,
+    "nombre": "Botines Phantom Gt Elite Df Fg",
+    "precio": 54999,
+    "destacado": true,
+    "imagen": "./img/24.webp",
+    "marca": "nike"
+    }
+]
